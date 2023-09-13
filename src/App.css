@@ -1,0 +1,53 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  @apply w-full rounded-2xl bg-white p-2 flex flex-col items-center gap-y-4;
+  height: calc(100vh - 4rem);
+  color: black;
+
+  .search-input {
+    @apply py-2 px-4 border-none hover:outline-none focus:outline-none rounded;
+    min-width: 200px;
+    max-width: 500px;
+    width: 100%;
+    color: white;
+  }
+
+  .item-list {
+    @apply flex flex-col gap-y-2 px-4;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 800px;
+    min-width: 200px;
+
+    .item {
+      @apply p-4 text-left overflow-hidden rounded;
+      min-height: 100px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .item-list .loading-img {
+    @apply object-cover text-center flex justify-center;
+    background: transparent;
+    transition: all .2s ease-in-out;
+    max-height: 100px;
+
+    img {
+      @apply object-cover h-full;
+      animation: rotating 2s linear infinite;
+    }
+
+    @keyframes rotating {
+      to {
+        rotate: 360deg;
+      }
+    }
+    
+  }
+}
